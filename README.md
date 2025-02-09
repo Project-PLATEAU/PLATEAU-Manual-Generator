@@ -68,7 +68,7 @@
 | guidance | 応用スキーマ文書にカスタマイズを施す場合に利用するyamlファイルを格納（初版リリースでは未利用） |
 | liquid_templates | Metanorma出力で利用するliquidファイルを格納 |
 | xmi | EAから出力した「plateau_all_packages_export.xmi」を格納 |
-| EAandSC | EAのプロジェクトファイル、ShapeChangeのConfig、整形プログラム（ExcelVBA）をShapeChange3-1-0のフォルダにそのまま格納 |
+| ShapeChange-3.1.0 | EAのプロジェクトファイル、ShapeChangeのConfig、整形プログラム（ExcelVBA）をShapeChange-3.1.0のフォルダにそのまま格納 |
 | manual | 本システムのマニュアルを格納 |
 
 
