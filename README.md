@@ -17,7 +17,7 @@
 
 具体的にはクラス図画像の出力に利用しているEnterprise Architect（EA）のモデル情報をソース情報（概念モデル）として、フリーのソフトウェアであるShapeChangeとMetanormaを導入することで、製品に付属するurfとuroのXSD（符号化仕様）と、3D都市モデルのドキュメントを生成するフローとなります。
 
-本システムの詳細については[技術検証レポート](https://www.mlit.go.jp/plateau/file/libraries/doc/plateau_tech_doc_0030_ver01.pdf)を参照してください。
+本システムの詳細については、レポジトリにマニュアルや、[技術検証レポート](https://www.mlit.go.jp/plateau/file/libraries/doc/plateau_tech_doc_0030_ver01.pdf)を参照してください。
 
 ## 3. 利用手順 <!-- 下記の通り、GitHub Pagesへリンクを記載ください。URLはアクセンチュアにて設定しますので、サンプルそのままでOKです。 -->
 本システムの構築手順及び利用手順については[利用チュートリアル](https://r5-plateau-acn.github.io/SolarPotential/)を参照してください。
@@ -68,7 +68,7 @@
 | guidance | 応用スキーマ文書にカスタマイズを施す場合に利用するyamlファイルを格納（初版リリースでは未利用） |
 | liquid_templates | Metanorma出力で利用するliquidファイルを格納 |
 | xmi | EAから出力した「plateau_all_packages_export.xmi」を格納 |
-| ShapeChange-3.1.0 | EAのプロジェクトファイル、ShapeChangeのConfig、整形プログラム（ExcelVBA）をShapeChange-3.1.0のフォルダにそのまま格納 |
+| ShapeChange-3.1.0 | ShapeChange-3.1.0のデフォルトフォルダに、EAのプロジェクトファイル、ShapeChangeのConfig、整形プログラム（ExcelVBA）をそのまま格納 |
 | manual | 本システムのマニュアルを格納 |
 
 
