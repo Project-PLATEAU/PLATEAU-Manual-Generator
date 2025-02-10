@@ -1,0 +1,10 @@
+---
+metanorma:
+  source:
+    files:
+      - sources/001-v5/document.adoc
+      - sources/002-v5/document.adoc
+
+  collection:
+    name: Project PLATEAU by MLIT
+    organization: Ministry of Land, Infrastructure, Transportation and Tourism (MLIT) of Japan

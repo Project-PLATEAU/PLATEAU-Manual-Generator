@@ -1,0 +1,292 @@
+= Project PLATEAU sample documents
+
+These documents belong to Project PLATEAU by MLIT.
+
+== Structure
+
+`sources/`::
+source of the documents
+
+`sources/001-v4/`::
+PLATEAU Handbook #01 source, v4.
+
+`sources/001-v4/iur/`::
+i-UR data. Downloaded from here:
+https://www.chisou.go.jp/tiiki/toshisaisei/itoshisaisei/iur/index.html
+(see https://github.com/metanorma/mn-samples-plateau/issues/128)
+
+`sources/002-v4/`::
+PLATEAU Handbook #02 source, v4.
+
+`reference-docs/`::
+Reference documents.
+
+`_site/`::
+(automatically generated, in the `gh-pages` branch) published document.
+
+`collection.yml`::
+The PLATEAU Handbook collection of 001 and 002. After compilation the output
+will be at `index.html`.
+
+////
+== Prerequisites
+
+=== General
+
+WARNING: You must have have access privileges to this software before you
+can access this software. Please contact Ribose administrators if you do not.
+
+This repository contains documents that require the private Metanorma-PLATEAU
+package.
+
+There are two ways to access the Metanorma-PLATEAU software.
+
+=== Via private package
+
+==== Obtain a GitHub authentication token
+
+A GitHub authentication token is needed to install this package.
+Please follow the following steps.
+
+. On https://github.com, click on your profile picture on the top right
+and click on "Settings".
+. Click on "Developer settings" at the bottom of the navigation bar
+. Click on "Personal access tokens", then "Tokens (classic)"
+. Click the "Generate new token" button, then "Generate new token (classic)"
+. Now prompted with a form, choose a name for the token, set expiration (usual caveats apply),
+and select at least the scope `read:packages`. This allows the new token to access
+private packages.
+
+NOTE: Make sure you create a "personal access token (classic)" which is the only
+form of token the
+https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-rubygems-registry[GitHub private Rubygems package registry]
+supports!
+
+This token is to be used in your Gem *and* Bundler authentication (see https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-rubygems-registry[GitHub's page] for details).
+
+// ==== Configure Rubygems authentication
+
+// This is the first location to install the token.
+
+// Create a file `~/.gem/credentials` to house your token:
+
+// [source,yaml]
+// ----
+// ---
+// :github: Bearer ghp_BEEFBEEFBEEFBEEFBEEFBEEFBEEFBEEFBEEF
+// ----
+
+==== Configure Bundler authentication
+
+// This is the second location to install the token.
+
+Run the following command:
+
+[source,sh]
+----
+bundle config https://rubygems.pkg.github.com/metanorma YOURUSERNAME:ghp_BEEFBEEFBEEFBEEFBEEFBEEFBEEFBEEFBEEF
+----
+
+To verify if it worked, check your `$HOME/.bundle/config` file
+that it contains this line:
+
+[source,yaml]
+----
+---
+BUNDLE_GEM__CI: "github"
+BUNDLE_GEM__CHANGELOG: "false"
+BUNDLE_RUBYGEMS__PKG__GITHUB__COM: "MyGitHubUsername:ghp_BEEFBEEFBEEFBEEFBEEFBEEFBEEFBEEFBEEF" <1>
+BUNDLE_GEM__LINTER: "rubocop"
+----
+<1> Check if this exists!
+
+=== Via source code
+
+==== Setup Git authentication with GitHub
+
+Please refer to these guides. We recommend using SSH over HTTPS to
+authentication against GitHub due to stability.
+
+SSH:
+
+* https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent[Generating a new SSH key and adding it to the ssh-agent]
+* https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account[Adding a new SSH key to your GitHub account]
+
+==== Configuring the document repository
+
+Metanorma document repositories are configured by default to use private packages,
+not development source code.
+
+In order to use development source code, you would need to authenticate with
+GitHub through Git.
+
+To use SSH or HTTP for GitHub authentication, you will need to edit the
+`Gemfile` located at the root of the document repository.
+
+[source,ruby]
+----
+source "https://rubygems.org"
+
+gem "metanorma-plateau", source: "https://rubygems.pkg.github.com/metanorma" <1>
+gem "metanorma-cli"
+----
+<1> This line uses the privately published package. Line to replace.
+
+If you use SSH, change to:
+
+[source,ruby]
+----
+source "https://rubygems.org"
+
+gem "metanorma-plateau", git: "git@github.com:metanorma/metanorma-plateau.git" <1>
+gem "metanorma-cli"
+----
+<1> Replaced line
+
+If using HTTPS, change to:
+
+[source,ruby]
+----
+source "https://rubygems.org"
+
+gem "metanorma-plateau", github: "metanorma/metanorma-plateau" <1>
+gem "metanorma-cli"
+----
+<1> Replaced line
+
+
+Then run the `bundle` command to fetch the development code.
+////
+
+== Usage (general)
+
+=== Quick start
+
+The easy way if you install locally:
+
+[source,sh]
+----
+git clone https://github.com/metanorma/mn-samples-plateau/
+bundle
+bundle exec metanorma sources/001-v4/document.adoc
+# => sources/001-v4/document.{html,xml,pdf}
+----
+
+=== Installing Metanorma
+
+See https://www.metanorma.org
+
+=== Fetching the document
+
+[source,sh]
+----
+git clone https://github.com/metanorma/mn-samples-plateau/
+----
+
+=== Building a single document
+
+[source,sh]
+----
+bundle exec metanorma sources/001-v4/document.adoc # or whichever document
+----
+
+This command outputs the built document at:
+
+* `sources/001-v4/document.{html,pdf,xml}`
+
+=== Building the full site
+
+[source,sh]
+----
+bundle exec metanorma site generate
+----
+
+This command creates `_site/`. The HTML entry point is at `_site/index.html`.
+
+
+=== Building the collection
+
+NOTE: This functionality is experimental, it builds a site with split sections
+in HTML.
+
+[source,sh]
+----
+bundle exec metanorma collection collection.yml
+----
+
+This command creates `_site/` with the HTML entry point at `_site/index.html`.
+
+
+== (DEPRECATED) Converting documents from HTML
+
+WARNING: There is NO NEED to convert the original HTML documents to Metanorma.
+This is only historic information, and the commands have already been changed.
+
+Steps:
+
+. Install `coradoc` (run `bundle install`)
+. Obtain the `index.html` from https://www.mlit.go.jp/plateaudocument02/
+. Load the page entirely, and then copy/paste the HTML DOM content into
+a new `index.html` file.
+. Run the `reverse_adoc` command:
+
+[source,sh]
+----
+$ bundle exec reverse_adoc -rcoradoc/reverse_adoc/plugins/plateau --split-sections 2 --external-images -o sources/001-v4/document.adoc reference-docs/plateau-document-01-v4.html
+$ bundle exec reverse_adoc -rcoradoc/reverse_adoc/plugins/plateau --split-sections 2 --external-images -o sources/002-v4/document.adoc reference-docs/plateau-document-02-v4.html
+----
+
+Where:
+
+`reference-docs/plateau-document-01.html`:: is the input document
+`-o plateau-document-01/index.adoc`:: is the output document path
+`--split-sections`:: means to split files at Clause level 2
+`--external-images`:: means to extract out all images to separate files
+`-rcoradoc/reverse_adoc/plugins/plateau`:: applies Plateau-specific conversions
+
+
+
+
+== Editor usage
+
+=== Convert images from webp to PNG
+
+Some PLATEAU documents utilize webp images.
+
+Due to https://github.com/metanorma/mn-samples-plateau/issues/7 , the PDF renderer we use, Apache FOP, does not support webp images.
+
+Hence at import we have to convert all webp images into PNG.
+
+Converting with parallel processing: (if you have GNU Parallel)
+
+[source,sh]
+----
+$ parallel dwebp {} -o {}.png ::: *.webp
+----
+
+Converting sequentially:
+
+[source,sh]
+----
+$ find . -name "*.webp" -exec dwebp \{} -o \{}.png
+----
+
+Updating the files to refer to the new `.png` files:
+
+[source,sh]
+----
+sed -i '' 's/\.webp/.webp.png/g' sources/001-v3/sections/*.adoc
+----
+
+
+=== Running via Docker or locally
+
+If you have installed the build tools locally, and wish to run the
+locally-installed compilation tools, there is nothing further to set.
+
+If you don't want to deal with local dependencies, use the docker:
+
+[source,sh]
+----
+docker run -v "$(pwd)":/metanorma -w /metanorma -it metanorma/metanorma metanorma site generate
+----
