@@ -58,16 +58,20 @@
 | その他　　　       | ・利用可能なメモリを20～30G程度を確保しておく<br>・ShapeChangeはEAと同じマシンにJRE11以上で環境構築する<br>・インターネットにアクセス可能であり、各ミドルウェアがセキュリティで制限されないようにする |  同左                            | 
 
 ## 7. 本リポジトリのフォルダ構成 <!-- 本GitHub上のソースファイルの構成を記載ください。 -->
-本レポジトリに格納しているリソースフォルダには、下記のサブフォルダがあります。
+本レポジトリに格納しているリソースフォルダには、下記のサブフォルダがあります（第二階層まで記載します）。なおリソースフォルダ直下には、GemfileやyamlファイルといったMetanormaで利用するファイル、本システムのマニュアル等を配置しています。
 
 | フォルダ名 |　詳細 |
 |-|-|
+| sources | Metanormaのリソースフォルダ |
 | sources\001-v5 | 標準製品仕様書のコンテンツを格納 |
 | sources\002-v5 | 標準作業手順書のコンテンツを格納 |
 | sources\guidance | 応用スキーマ文書にカスタマイズを施す場合に利用するyamlファイルを格納（初版リリースでは未利用） |
 | sources\liquid_templates | Metanorma出力で利用するliquidファイルを格納 |
 | sources\xmi | EAから出力した「plateau_all_packages_export.xmi」を格納 |
 | ShapeChange-3.1.0 | ShapeChange-3.1.0のデフォルトフォルダに、EAのプロジェクトファイル、ShapeChangeのConfig、整形プログラム（ExcelVBA）をそのまま格納 |
+| ShapeChange-3.1.0\documentation | ShapeChangeのデフォルトサブフォルダ、ShapeChangeのドキュメントが格納されている |
+| ShapeChange-3.1.0\lib |  ShapeChangeのデフォルトサブフォルダ、ShapeChangeで利用するライブラリファイル（JARファイル）が格納されている |
+| ShapeChange-3.1.0\test | テスト出力用フォルダ |
 
 
 ## 8. ライセンス <!-- 変更せず、そのまま使うこと。 -->
