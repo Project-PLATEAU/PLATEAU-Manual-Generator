@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>環境構築手順書 </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="環境構築手順書 ">
+    
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../resources/logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="環境構築手順書">環境構築手順書</h1>
+
+<h1 id="1-本書について">1 本書について</h1>
+<p>本書では、モデル駆動型アーキテクチャによる3D都市モデル標準ドキュメントの生成・管理システム（以下「本システム」という。）の利用環境構築手順について記載しています。</p>
+<p>本システムは複数のアプリから構成されます。ライセンスがフリーのアプリが「ShapeChange」（JavaのJARファイル）と「Metanorma」（Rubyのgem）、ライセンスが必要なアプリが「Enterprise Architect」（EAと略す）と「Microsoft Office Excel」です。</p>
+<p>ライセンスが必要なアプリの環境構築については記載を省略します。</p>
+<p>本システムの構成や仕様の詳細については、レポジトリに格納したリソースフォルダ直下のマニュアルや、以下も参考にしてください。</p>
+<p><a href="https://www.mlit.go.jp/plateau/file/libraries/doc/plateau_tech_doc_0030_ver01.pdf">技術検証レポート</a></p>
+<h1 id="2-動作環境">2 動作環境</h1>
+<p>本システムの動作環境は以下のとおりです。</p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>最小動作環境</th>
+<th>推奨動作環境</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OS</td>
+<td>Microsoft Windows 10 または 11</td>
+<td>Microsoft Windows 11</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td>Intel Core i7以上</td>
+<td>同左</td>
+</tr>
+<tr>
+<td>メモリ</td>
+<td>16GB以上</td>
+<td>同左</td>
+</tr>
+<tr>
+<td>その他</td>
+<td>・利用可能なメモリは20～30G程度を確保すること<br>・ShapeChangeはEAと同じマシンにJRE11以上で環境構築すること<br>・インターネットにアクセス可能であり、各ミドルウェアがセキュリティで制限されないこと</td>
+<td>同左</td>
+</tr>
+</tbody>
+</table>
+<h1 id="2-本システムのリソース">2 本システムのリソース</h1>
+<p>システムを構成する各アプリが利用するリソースは
+<a href="https://github.com/Project-PLATEAU/UC22-013-SolarPotential/releases/">こちら</a>
+からダウンロードします。
+ダウンロード後、zipファイルを右クリックし、「すべて展開」を選択することで、zipファイルを展開します。</p>
+<p><img src="../resources/devMan/tutorial_000.png" alt=""></p>
+<h1 id="3-構築手順eaのプロジェクトファイルとshapechange">3 構築手順（EAのプロジェクトファイルとShapeChange）</h1>
+<p>ShapeChangeはEAのプロジェクトファイルからurfとuroのXSDを出力するのに利用します。本システムではVer3.1.0を利用しているため、利用マシンにはJRE11の環境をご準備ください。</p>
+<p><a href="https://shapechange.net/resources/dist/net/shapechange/ShapeChange/3.1.0/ShapeChange-3.1.0.zip">ShapeChange-3.1.0</a></p>
+<p>解凍したフォルダーを、そのまま作業用フォルダー（以下「ShapeChange-3.1.0フォルダー」という）として利用できます。</p>
+<p>ShapeChange-3.1.0フォルダーの「ShapeChangeConfig_Plateau_urf.xml」がurfの、「ShapeChangeConfig_Plateau_uro.xml」がuroのConfigファイルです。</p>
+<p>また、ShapeChange-3.1.0フォルダーの「202503_current_plateau_v5.0.eapx」がEAのプロジェクトファイルで、このファイルから出力したqeaファイルも、ShapeChange-3.1.0フォルダーに格納して利用します。</p>
+<p>なお、展開されたリソース内の「XSD整形_2024年度用.xlsm」が、ShapeChangeで出力したXSDの整形プログラムを実装しています。</p>
+<p><img src="../resources/devMan/tutorial_001.png" alt=""></p>
+<h1 id="4-構築手順metanorma">4 構築手順（Metanorma）</h1>
+<p>Metanormaは、adocファイルや画像ファイル等から構成されたコンテンツから、指定したスタイルでドキュメントを生成（ビルド）します。</p>
+<p>展開されたフォルダ内の「sources/001-v5/document.adoc」が標準製品仕様書、「sources/002-v5/document.adoc」が標準作業手順書を指定して、ビルドを実行します。</p>
+<p><img src="../resources/devMan/tutorial_002.PNG" alt=""></p>
+<p>Metanormaの開発環境は下記の通り構築します。</p>
+<p>（1）下記サイトから、RubyのWindows向けでWITH DEVKITのインストーラをDLして、インストールを実行します（オプションはすべてデフォルトとします）。完了画面にて下図のチェックボックスを選択し、「Finish」ボタンを押下するとコマンド画面が立ち上がってくるので、ENTERを押下します（レスポンスが遅いので留意してください）。</p>
+<p><a href="https://rubyinstaller.org/downloads/">Rubyインストーラー</a></p>
+<p><img src="../resources/devMan/tutorial_003.PNG" alt=""></p>
+<p>（2）コマンド画面が閉じたら、管理者モードでPowerShellを立ち上げ、「ruby –v」コマンドを実行し（インストールVerが確認できればインストールできている）、そのまま「gem install metanorma-cli」にてメタノーマをインストールしてください。</p>
+<p><img src="../resources/devMan/tutorial_004.PNG" alt=""></p>
+<p>（3）インストールマシンにJava実行環境がない場合は、JRE11で環境を構築ください（MetanormaのPDF出力機能はJavaを利用しています）。</p>
+<h1 id="5-その他">5 その他</h1>
+<p>adocファイルの編集はテキストエディターで可能ですが、Visual Studio Codeにて、下記の拡張機能の利用を推奨します。</p>
+<p><img src="../resources/devMan/tutorial_005.PNG" alt=""></p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

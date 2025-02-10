@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>操作マニュアル </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="操作マニュアル ">
+    
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../resources/logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="操作マニュアル">操作マニュアル</h1>
+
+<h1 id="1-本書について">1 本書について</h1>
+<p>本書では、モデル駆動型アーキテクチャによる3D都市モデル標準ドキュメントの生成・管理システム（以下「本システム」という。）の操作手順について記載しています。</p>
+<p>本システムの構成や仕様の詳細については、レポジトリに格納したリソースフォルダ直下のマニュアルや、以下も参考にしてください。</p>
+<p><a href="https://www.mlit.go.jp/plateau/file/libraries/doc/plateau_tech_doc_0030_ver01.pdf">技術検証レポート</a></p>
+<h1 id="2-概念モデルと符号化仕様の作成">2 概念モデルと符号化仕様の作成</h1>
+<h2 id="2-1-qea変換のオペレーション">2-1 qea変換のオペレーション</h2>
+<p>ShapeChangeでXSDを出力するため、「Enterprise Architect」（以下、「EA」と略す）のプロジェクトファイルから、qea形式のプロジェクトファイルを出力します。</p>
+<p>① EAにて、「メインメニュー」の「プロジェクト」の「転送」から、「EAP/EAPXファイルの変換」を選択します</p>
+<p>② サブウインドウから、インプットを元のプロジェクトファイル、出力を「QEAファイル」で任意の名前を設定し、転送します。</p>
+<p>③ 変換したqeaファイルは、ShapeChangeのJARファイルと同一階層に配置するようにしてください。</p>
+<p><img src="../resources/userMan/tutorial_000.png" alt=""></p>
+<h2 id="2-2-xsd出力のオペレーション">2-2 XSD出力のオペレーション</h2>
+<p>qeaファイルからShapeChangeを利用して、urfとuroのXSDを出力します。</p>
+<p>① PowerShellを管理者モードで開き、カレントディレクトリをShapeChange のJARファイルのあるフォルダーに変更します。</p>
+<p>② 「java -jar ShapeChange-3.1.0.jar -Dfile.encoding=UTF-8 -c AAA」（AAAはConfigファイルのパスとします）を実行すると、Config指定の出力先にXSDが出力されます。</p>
+<p>・Configファイルはurfとuroで二つあります、AAAを書き換えて二回実行ください。</p>
+<p><img src="../resources/userMan/tutorial_001.png" alt=""></p>
+<h2 id="2-3-xsd整形のオペレーション">2-3 XSD整形のオペレーション</h2>
+<p>XSDを3D都市モデルで利用する形に整形します。</p>
+<p>① 「XSD整形_2024年度用.xlsm」のワークシート「do」の表に、urf/uroの入出力XSD、及びuroのVerを小数点以下一位まで設定します。</p>
+<p><img src="../resources/userMan/tutorial_002.png" alt=""></p>
+<p>② ワークシート「uro_add」に、uroで追加したい行を設定します。</p>
+<p><img src="../resources/userMan/tutorial_003.png" alt=""></p>
+<p>③ 「実行ボタン」を押下すると、設定したパスにXSDが出力されます</p>
+<h1 id="3-概念モデルとドキュメント作成">3 概念モデルとドキュメント作成</h1>
+<h2 id="3-1-xmiとumlクラス図画像の出力オペレーション">3-1 XMIとUMLクラス図画像の出力オペレーション</h2>
+<p>EAから標準製品仕様書にレンダリングするUMLクラス図画像と、応用スキーマ文書のソースとなるXMIファイルを出力します。</p>
+<p>① EAにて、「メインメニュー」の「生成・入出力」の「出力」から、「その他の形式」を選択します。</p>
+<p>② サブウインドウにて下図の出力設定を行い、出力ボタンを押下します。</p>
+<p><img src="../resources/userMan/tutorial_004.png" alt=""></p>
+<p>・ダイアグラムの画像フォーマットを、SVGとPNGのそれぞれを設定して、二回出力を行います。</p>
+<p>・パッケージはプロジェクトファイルのTOPプロジェクトを選択し、出力ファイル名は「plateau_all_packages_export.xmi」としてください。</p>
+<p>③ Metanormaリソースのフォルダーにて、「sources/xmi」にXMIファイルを上書き保存し、画像は「sources/001-v5/images」フォルダに上書き保存します。</p>
+<p><img src="../resources/userMan/tutorial_005.png" alt=""></p>
+<h2 id="3-2-ファイル生成のオペレーション">3-2 ファイル生成のオペレーション</h2>
+<p>Metanormaを使い、adocやXMI、画像ファイルといったリソースファイル一式から標準製品仕様書と標準作業手順書を出力します。</p>
+<p>① PowerShellを管理者モードで開き、カレントディレクトリを、「Metanormaコンテンツ用TOPフォルダー」（sourcesの一つ上の階層）に変更します。</p>
+<p><img src="../resources/userMan/tutorial_006.png" alt=""></p>
+<p>② カレントディレクトリから「Gemfile.lock」ファイルがある場合は削除します。</p>
+<p>③ PowerShellにて、「bundle install」を実行し、実行完了後に「bundle update」を実行します。</p>
+<p>④ PowerShellにて、下記のとおり生成コマンドを実行します。</p>
+<table>
+<thead>
+<tr>
+<th>生成対象</th>
+<th>コマンド</th>
+<th>出力先</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>・標準製品仕様書</td>
+<td>bundle exec metanorma sources/001-v5/document.adoc</td>
+<td>sources/001-v5</td>
+</tr>
+<tr>
+<td>・標準作業手順書</td>
+<td>bundle exec metanorma sources/002-v5/document.adoc</td>
+<td>sources/002-v5</td>
+</tr>
+<tr>
+<td>・同時出力</td>
+<td>bundle exec metanorma site generate --agree-to-terms</td>
+<td>「Metanormaコンテンツ用TOPフォルダー」直下に生成される出力フォルダー</td>
+</tr>
+</tbody>
+</table>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
