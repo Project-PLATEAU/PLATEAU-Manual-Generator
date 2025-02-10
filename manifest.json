@@ -1,0 +1,225 @@
+{
+  "source_base_path": "C:/Users/11704101/Documents/GitHub/PLATEAU-Manual-Generator-gh-pages/markdown",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/devMan.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/devMan.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "manual/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "manual/toc.html"
+        },
+        ".json": {
+          "relative_path": "manual/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/userMan.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/userMan.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/devMan/tutorial_000.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/devMan/tutorial_000.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/devMan/tutorial_001.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/devMan/tutorial_001.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/devMan/tutorial_002.PNG",
+      "output": {
+        "resource": {
+          "relative_path": "resources/devMan/tutorial_002.PNG"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/devMan/tutorial_003.PNG",
+      "output": {
+        "resource": {
+          "relative_path": "resources/devMan/tutorial_003.PNG"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/devMan/tutorial_004.PNG",
+      "output": {
+        "resource": {
+          "relative_path": "resources/devMan/tutorial_004.PNG"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/devMan/tutorial_005.PNG",
+      "output": {
+        "resource": {
+          "relative_path": "resources/devMan/tutorial_005.PNG"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/logo.svg",
+      "output": {
+        "resource": {
+          "relative_path": "resources/logo.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/overview_001.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/overview_001.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/userMan/tutorial_000.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/userMan/tutorial_000.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/userMan/tutorial_001.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/userMan/tutorial_001.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/userMan/tutorial_002.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/userMan/tutorial_002.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/userMan/tutorial_003.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/userMan/tutorial_003.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/userMan/tutorial_004.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/userMan/tutorial_004.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/userMan/tutorial_005.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/userMan/tutorial_005.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/userMan/tutorial_006.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/userMan/tutorial_006.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
