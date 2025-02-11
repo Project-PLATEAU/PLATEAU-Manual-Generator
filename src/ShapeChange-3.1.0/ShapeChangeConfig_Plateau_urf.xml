@@ -2,7 +2,7 @@
 	<input>
 		<parameter name="inputModelType" value="EA7"/>
 		<!-- インプットファイルを変更ください -->
-		<parameter name="inputFile" value="20250204_current_plateau_v5.0.qea"/>
+		<parameter name="inputFile" value="20250211_current_plateau_v5.0.qea"/>
 		<parameter name="appSchemaName" value="urf"/>
 		<parameter name="publicOnly" value="true"/>
 		<parameter name="checkingConstraints" value="disabled"/>
