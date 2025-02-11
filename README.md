@@ -17,7 +17,7 @@
 
 具体的にはクラス図画像の出力に利用しているEnterprise Architect（EA）のモデル情報をソース情報（概念モデル）として、フリーのソフトウェアであるShapeChangeとMetanormaを導入することで、製品に付属するurfとuroのXSD（符号化仕様）と、3D都市モデルのドキュメントを生成するフローとなります。
 
-本システムの詳細については、レポジトリに格納したリソースフォルダ直下のマニュアルや、[技術検証レポート](https://www.mlit.go.jp/plateau/file/libraries/doc/plateau_tech_doc_0030_ver01.pdf)を参照してください。
+本システムの詳細については、[技術検証レポート](https://www.mlit.go.jp/plateau/file/libraries/doc/plateau_tech_doc_0030_ver01.pdf)を参照してください。
 
 ## 3. 利用手順 <!-- 下記の通り、GitHub Pagesへリンクを記載ください。URLはアクセンチュアにて設定しますので、サンプルそのままでOKです。 -->
 本システムの構築手順及び利用手順については[利用チュートリアル](https://r5-plateau-acn.github.io/SolarPotential/)を参照してください。
