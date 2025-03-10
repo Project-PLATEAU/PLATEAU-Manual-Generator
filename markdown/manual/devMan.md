@@ -81,3 +81,7 @@ adocファイルの編集はテキストエディターで可能ですが、Visu
 
 ![](../resources/devMan/tutorial_005.png)
 
+またここでは省略するが、出力でFireLightというHTMLビューラッパーを生成することが可能である、下記を参照のこと。
+
+[FireLight](https://github.com/metanorma/firelight)
+
