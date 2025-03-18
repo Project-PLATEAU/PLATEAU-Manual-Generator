@@ -39,10 +39,10 @@
 
 | 種別              | 名称   | バージョン | 備考 |
 | ----------------- | --------|-------------|-----------------------------|
-| ミドルウェア       | [Enterprise Architect](https://python-poetry.org/) | 16.1 | ※ライセンス要 |
-|       | [ShapeChange](https://libgeos.org/) | 3.1.0 | 実体はJARファイルであり、起動させるためにJRE11環境を構築する |
-|       | [Ruby](https://proj.org/) | 3.3.6 | Metanormaは主としてRubyのGemで構成される（PDF出力にJavaも用いるが、ShapeChangeと同じJRE11で問題ない） |
-|       | [Microsoft Excel](https://proj.org/) | - | ※ライセンス要 |
+| ミドルウェア       | [Enterprise Architect](https://www.sparxsystems.jp/products/EA/ea_zero.htm) | 16.1 | ※ライセンス要 |
+|       | [ShapeChange](https://shapechange.github.io/ShapeChange/3.1.0/) | 3.1.0 | 実体はJARファイルであり、起動させるためにJRE11環境を構築する |
+|       | [Ruby](https://www.ruby-lang.org/ja/) | 3.3.6 | Metanormaは主としてRubyのGemで構成される（PDF出力にJavaも用いるが、ShapeChangeと同じJRE11で問題ない） |
+|       | [Microsoft Excel](https://www.microsoft.com/ja-jp/microsoft-365/excel) | - | ※ライセンス要 |
 
 ## 6. 動作環境
 | 項目               | 最小動作環境                                                                                                                                                                                                                                                                                                                                    | 推奨動作環境                   | 
