@@ -4,7 +4,7 @@
 
 本書では、モデル駆動型アーキテクチャによる3D都市モデル標準ドキュメントの生成・管理システム（以下「本システム」という。）の利用環境構築手順について記載しています。
 
-本システムは複数のアプリから構成されます。ライセンスがフリーのアプリが「ShapeChange」（JavaのJARファイル）と「Metanorma」（Rubyのgem）、ライセンスが必要なアプリが「Enterprise Architect」（EAと略す）と「Microsoft Office Excel」です。
+本システムは複数のアプリから構成されます。ライセンスがフリーのアプリが「ShapeChange」（JavaのJARファイル）と「Metanorma」（Rubyのgem）、ライセンスが必要なアプリが「Enterprise Architect」（EAと略す）と「Microsoft Excel」です。
 
 ライセンスが必要なアプリの環境構築については記載を省略します。
 
